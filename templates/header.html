@@ -1,0 +1,33 @@
+<!-- Header of Employee Management Django website -->
+<!-- Created at 1403/12/06 21:37 -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/indexstyle.css' %}">
+</head>
+<body>
+    <header>
+        <div>
+            <h1 id="title">Employee Management</h1>
+        </div>
+    </header>
+    <br>
+    {% block content %}
+
+
+    {% endblock content %}
+    <br>
+    <footer>
+        <div>
+            <p id="powered">Mahdi HOSEIN ZADE &copy; 2025 Employee Management</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'scripts/javascript.js' %}"></script>
+</body>
+</html>

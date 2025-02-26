@@ -1,0 +1,25 @@
+header{
+    background-color: #ffe4c4;
+    padding: 18px 0;
+    text-align: center;
+}
+
+header h1{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #000;
+}
+
+footer{
+    background-color: #ffe4c4;
+    padding: 18px 0;
+    text-align: center;
+}
+
+footer #powered{
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    color: #000;
+}

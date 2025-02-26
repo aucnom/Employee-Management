@@ -1,0 +1,52 @@
+.tables thead, .tables tbody {
+    background-color: #d3d3d3;
+    text-align: center;
+}
+
+.tables{
+    margin-top: 100px;
+    place-items: center;
+}
+
+.tables th{
+    padding: 10px 20px;
+}
+
+.tables td{
+    padding: 10px 20px;
+}
+
+.table-button{
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+}
+
+.table-button:hover {
+    background-color: #40e0d0;
+}
+
+.management-buttons{
+    place-items: center;
+}
+
+.management-buttons h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+
+.btn-untitle{
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+}
+
+.btn-untitle:hover {
+    background-color: #40e0d0;
+}

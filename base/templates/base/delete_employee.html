@@ -1,0 +1,11 @@
+{% extends 'header.html' %}
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>آیا از حذف کارمند مطمئن هستید "{{obj}}"؟</p>
+    <a href="{{request.META.HTTP_REFERER}}">لغو عملیات</a>
+    <input type="submit" value="بله">
+</form>
+
+{% endblock content %}

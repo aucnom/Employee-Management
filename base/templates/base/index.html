@@ -1,0 +1,104 @@
+{% extends 'header.html' %} {% block content %}
+
+<div class="management-buttons">
+  <h3>مدیریت کارمندان</h3>
+  <a href="{% url 'create-employee' %}">
+    <input
+      id="create_new_employee"
+      type="button"
+      value="ثبت کارمند جدید"
+      class="btn-untitle"
+    />
+  </a>
+  <a href="{% url 'create-job' %}">
+    <input
+      id="create_new_job"
+      type="button"
+      value="ثبت شغل جدید"
+      class="btn-untitle"
+    />
+  </a>
+</div>
+
+<div class="tables">
+  <table>
+    <thead>
+      <tr>
+        <th>شناسه</th>
+        <th>نام</th>
+        <th>نام خانوادگی</th>
+        <th>شماره ملی</th>
+        <th>تاریخ تولد</th>
+        <th>شماره تماس</th>
+        <th>آدرس</th>
+        <th>شغل</th>
+        <th>عملیات</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for e in employees %}
+      <tr>
+        <td>{{ e.pk }}</td>
+        <td>{{ e.first_name }}</td>
+        <td>{{ e.last_name }}</td>
+        <td>{{ e.national_id }}</td>
+        <td>{{ e.birth }}</td>
+        <td>{{ e.phone }}</td>
+        <td>{{ e.address }}</td>
+        {% if e.job.title != null %}
+          <td>{{ e.job.title }}</td>
+        {% else %}
+          <td>نامشخص</td>
+        {% endif %}
+        
+        <td>
+          <a href="{% url 'delete-employee' e.id %}">
+            <input type="button" value="حذف" class="table-button" />
+          </a>
+          <a href="{% url 'update-employee' e.id %}">
+            <input type="button" value="بروزرسانی" class="table-button" />
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="tables">
+  <table>
+    <thead>
+      <tr>
+        <th>شناسه</th>
+        <th>عنوان</th>
+        <th>حقوق پایه</th>
+        <th>توضیحات</th>
+        <th>عملیات</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for j in jobs %}
+      <tr>
+        <td>{{ j.pk }}</td>
+        <td>{{ j.title }}</td>
+        <td>{{ j.basic_salary }}</td>
+        {% if j.description != "" %}
+        <td>{{ j.description }}</td>
+        {% else %}
+        <td>فاقد توضیحات</td>
+        {% endif %}
+        <td>
+          <a href="{% url 'delete-job' j.id %}">
+            <input type="button" value="حذف" class="table-button" />
+          </a>
+          <a href="{% url 'update-job' j.id %}">
+            <input type="button" value="بروزرسانی" class="table-button" />
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div style="margin-top: 100px"></div>
+{% endblock content %}
